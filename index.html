@@ -3,57 +3,189 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Portofolio — Computer Science (Multimedia)</title>
+<title>Portofolio — Computer Science</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Figtree:wght@400;600&display=swap">
 <style>
-:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);--bg:#fff;--fg:#1a1a1a;--mut:#666;--line:#e5e5e5;--acc:#1a1a1a}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#151515;--fg:#eee;--mut:#999;--line:#2c2c2c;--acc:#eee}}
-:root[data-theme="dark"]{--bg:#151515;--fg:#eee;--mut:#999;--line:#2c2c2c;--acc:#eee}
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+--bg:#eef2f7;--card:#fff;--fg:#16213a;--mut:#56617a;--line:#cdd6e4;--hl:#ffd23f;--leaf:#2f8f5b;--sky:#4a7bd8;--coral:#e8604c;--violet:#9b6bd6;--matcha:#7fb069;
+--grass:#4cae6b;--dirt:#8a5a3b;--water:#6aa8e8;--trunk:#6b4428;--skin:#f2c9a0}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#10172a;--card:#19223a;--fg:#e9eefb;--mut:#9aa6c2;--line:#2a3452;--leaf:#5fcf8c;--sky:#7aa2ff;--coral:#ff7e6b;--violet:#b794f0;--matcha:#9bd07f;--grass:#3d9a5a;--dirt:#6d4630;--water:#4a7bd8;--trunk:#8a5a3b}}
+:root[data-theme="dark"]{--bg:#10172a;--card:#19223a;--fg:#e9eefb;--mut:#9aa6c2;--line:#2a3452;--leaf:#5fcf8c;--sky:#7aa2ff;--coral:#ff7e6b;--violet:#b794f0;--matcha:#9bd07f;--grass:#3d9a5a;--dirt:#6d4630;--water:#4a7bd8;--trunk:#8a5a3b}
+html{scroll-behavior:smooth;scroll-padding-top:64px}
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--fg);font-family:system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.65}
-main{max-width:620px;margin:0 auto;padding:48px 20px 72px}
-h1{font-size:1.8rem;margin:0 0 4px}
-h2{font-size:.8rem;text-transform:uppercase;letter-spacing:.1em;color:var(--mut);margin:44px 0 14px}
-p{margin:0 0 8px}
-.mut{color:var(--mut)}
-a{color:var(--acc)}
-.item{padding:14px 0;border-top:1px solid var(--line)}
-.item:first-of-type{border-top:0;padding-top:0}
-.item strong{display:block}
+body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.6 Figtree,system-ui,-apple-system,"Segoe UI",sans-serif;transition:background .25s,color .25s}
+a{color:var(--fg);text-decoration-color:var(--hl);text-decoration-thickness:3px;text-underline-offset:3px}
+a:hover{background:var(--hl);color:#16213a}
+:focus-visible{outline:3px solid var(--sky);outline-offset:2px}
+button{font:inherit;color:inherit;cursor:pointer}
+.wrap{max-width:900px;margin:0 auto;padding:0 22px}
+nav{position:sticky;top:env(safe-area-inset-top,0px);background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:2px solid var(--fg);z-index:5}
+nav .wrap{display:flex;align-items:center;gap:6px;height:54px;font-weight:600;font-size:.95rem}
+nav a{text-decoration:none;padding:6px 13px;border-radius:99px;transition:.2s}
+nav a:hover{background:var(--soft,rgba(255,210,63,.35))}
+nav a.on{background:var(--hl);color:#16213a}
+#theme{margin-left:auto;border:2px solid var(--fg);background:var(--card);border-radius:99px;padding:3px 13px;font-size:.85rem;font-weight:600}
+#theme:hover{background:var(--hl);color:#16213a}
+header{position:relative;overflow:hidden;padding-top:60px;--mx:30%;--my:20%}
+header::before{content:"";position:absolute;inset:0;background:radial-gradient(380px circle at var(--mx) var(--my),color-mix(in srgb,var(--hl) 30%,transparent),transparent 70%);pointer-events:none}
+header .wrap{position:relative}
+h1{font:800 clamp(2.6rem,9vw,5rem)/1 "Bricolage Grotesque",Figtree,system-ui,sans-serif;margin:0 0 12px;letter-spacing:-.02em}
+.role{font-weight:600;font-size:1.2rem;margin:0 0 12px;min-height:1.7em}
+.role span{background:linear-gradient(transparent 58%,var(--hl) 58%)}
+.role i{display:inline-block;width:3px;height:1.1em;background:var(--coral);vertical-align:-.15em;margin-left:3px;animation:bl 1s steps(2) infinite}
+@keyframes bl{50%{opacity:0}}
+.intro{max-width:30em;font-size:1.1rem;margin:0 0 22px}
+.btns{display:flex;flex-wrap:wrap;gap:10px}
+.btn{border:2px solid var(--fg);background:var(--card);border-radius:10px;padding:8px 16px;font-weight:600;font-size:.95rem;color:var(--fg);text-decoration:none;display:inline-block;box-shadow:3px 3px 0 var(--fg);transition:transform .12s,box-shadow .12s}
+.btn:hover{transform:translate(-2px,-2px);box-shadow:5px 5px 0 var(--fg);background:var(--card);color:var(--fg)}
+.btn:active{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--fg)}
+.btn.y{background:var(--hl);color:#16213a}.btn.s{background:var(--sky);color:#fff}.btn.c{background:var(--coral);color:#fff}
+.btn.y:hover{background:var(--hl);color:#16213a}.btn.s:hover{background:var(--sky);color:#fff}.btn.c:hover{background:var(--coral);color:#fff}
+.scene{display:block;width:100%;height:112px;margin-top:36px;image-rendering:pixelated}
+.scene .p{transition:transform .15s steps(2)}
+.scene:hover .p{transform:translateY(-1.5px)}
+section{padding:52px 0 0}
+h2{font:800 1.7rem/1.2 "Bricolage Grotesque",Figtree,sans-serif;margin:0 0 6px}
+.hint{color:var(--mut);margin:0 0 18px;font-size:.95rem}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.chip{--c:var(--hl);border:2px solid var(--fg);background:var(--card);border-radius:99px;padding:3px 14px;font-size:.9rem;font-weight:600;transition:.15s}
+.chip:hover:not(:disabled){background:color-mix(in srgb,var(--c) 40%,var(--card))}
+.chip[aria-pressed="true"]{background:var(--c);color:#16213a}
+.chip:disabled{opacity:.4;cursor:default}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}
+.card{display:flex;flex-direction:column;text-align:left;background:var(--card);border:2px solid var(--fg);border-top:10px solid var(--c);border-radius:10px;padding:18px 20px 20px;transition:transform .18s,box-shadow .18s;animation:in .3s ease both}
+@keyframes in{from{opacity:0;transform:translateY(8px)}}
+.card:hover{transform:translateY(-5px) rotate(-.4deg);box-shadow:0 10px 0 color-mix(in srgb,var(--c) 70%,transparent)}
+.card small{align-self:flex-start;background:color-mix(in srgb,var(--c) 30%,transparent);border-radius:6px;padding:0 9px;font-weight:600;font-size:.8rem;margin-bottom:8px}
+.card h3{font:800 1.2rem/1.2 "Bricolage Grotesque",Figtree,sans-serif;margin:0 0 6px}
+.card p{margin:0 0 14px;color:var(--mut);font-size:.95rem;flex:1}
+.card em{font-style:normal;font-weight:600;font-size:.9rem}
+.empty{color:var(--mut)}
+dialog{border:2px solid var(--fg);border-top:12px solid var(--c);border-radius:12px;background:var(--card);color:var(--fg);padding:0;width:min(540px,calc(100% - 32px));box-shadow:8px 8px 0 var(--fg)}
+dialog::backdrop{background:rgba(8,12,24,.55)}
+dialog[open]{animation:pop .22s ease}
+@keyframes pop{from{opacity:0;transform:scale(.95) translateY(8px)}}
+.dlg{padding:24px 26px 28px}
+.dlg small{background:color-mix(in srgb,var(--c) 30%,transparent);border-radius:6px;padding:0 9px;font-weight:600;font-size:.8rem}
+.dlg h3{font:800 1.45rem/1.2 "Bricolage Grotesque",Figtree,sans-serif;margin:10px 0 10px}
+.dlg p{color:var(--mut);margin:0 0 14px}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:18px}
+.tags span{background:color-mix(in srgb,var(--c) 22%,transparent);border-radius:6px;padding:1px 10px;font-size:.85rem;font-weight:600}
+.x{position:absolute;right:14px;top:6px;border:0;background:none;font-size:1.7rem;line-height:1}
+.skills{display:grid;gap:14px}
+.sk b{display:block;font-size:.9rem;color:var(--mut);margin-bottom:6px}
+.sk .chips{margin:0}
+.edu{background:var(--card);border:2px solid var(--fg);border-left:10px solid var(--leaf);border-radius:10px;padding:18px 22px}
+.edu p{margin:0;color:var(--mut)}
+footer{padding:56px 0 72px;color:var(--mut)}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
 </style>
 </head>
 <body>
-<main>
+<nav><div class="wrap">
+<a href="#atas" data-s="atas">Beranda</a><a href="#proyek" data-s="proyek">Proyek</a><a href="#keahlian" data-s="keahlian">Keahlian</a><a href="#pendidikan" data-s="pendidikan">Pendidikan</a>
+<button id="theme" aria-label="Ganti tema terang atau gelap">Theme</button>
+</div></nav>
+ 
+<header id="atas">
+<div class="wrap">
 <h1>Wishly Valen Kwek</h1>
-<p class="mut">Mahasiswa Computer Science, BINUS University.</p>
-<p><a href="mailto:wishly.kwek@binus.ac.id">wishly.kwek@binus.ac.id</a> · <a href="https://www.linkedin.com/in/wishly-valen-k-bb9a1a414/recent-activity/all/">LinkedIn</a> · <a href="https://github.com/WishlyVK">GitHub</a></p>
-
-<h2>Projects</h2>
-<div class="item">
-<strong>SpoJeDy</strong>
-<p class="mut">Music & Video Player WEb deployed in Vercel.</p>
-<a href="https://spo-jedy-coral.vercel.app/">Demo</a> · <a href="https://github.com/WishlyVK/SpoJedy">Source</a>
+<p class="role"><span id="typed"></span><i></i></p>
+<p class="intro">Undergraduate student majoring in Computer Science at Bina Nusantara University.</p>
+<div class="btns">
+<a class="btn y" href="#proyek">Project</a>
+<a class="btn s" href="mailto:wishly.kwek@binus.ac.id">Kirim email</a>
+<a class="btn" href="https://www.linkedin.com/in/wishly-valen-kwek-bb9a1a414/?isSelfProfile=true">LinkedIn</a>
+<a class="btn" href="https://github.com/WishlyVK">GitHub</a>
 </div>
-<div class="item">
-<strong>Borneo Valley</strong>
-<p class="mut">Game Design Projects</p>
-<a href="https://canva.link/ekx3z00tae1touz">PPT</a> · <a href="https://docs.google.com/document/d/1Sv_BjskVQADrkFIv4vUmeV0ueWKU_8sK0Tc2v1BnRm0/edit?usp=sharing">Game Design</a>
 </div>
-<div class="item">
-<strong>CHiMatcha</strong>
-<p class="mut">UX Projects, mobile apps implementation from figma design.</p>
-<a href="https://lnkd.in/dAdUPReF">Figma</a> · <a href="https://github.com/WishlyVK/ChimatchaUX">Source</a>
+<svg class="scene" viewBox="0 0 64 10" preserveAspectRatio="xMidYMax slice" shape-rendering="crispEdges" role="img" aria-label="Ilustrasi piksel: pemandangan kebun kecil dengan pohon, kolam, dan seorang karakter">
+<rect x="0" y="7" width="64" height="1" fill="var(--grass)"/>
+<rect x="0" y="8" width="64" height="2" fill="var(--dirt)"/>
+<rect x="47" y="7" width="9" height="1" fill="var(--water)"/>
+<rect x="53" y="1" width="3" height="3" fill="var(--hl)"/>
+<rect x="12" y="4" width="1" height="3" fill="var(--trunk)"/>
+<rect x="10" y="1" width="5" height="3" fill="var(--leaf)"/>
+<rect x="11" y="0" width="3" height="1" fill="var(--leaf)"/>
+<rect x="40" y="5" width="1" height="2" fill="var(--trunk)"/>
+<rect x="38" y="3" width="5" height="2" fill="var(--leaf)"/>
+<rect x="39" y="2" width="3" height="1" fill="var(--leaf)"/>
+<rect x="19" y="6" width="1" height="1" fill="var(--coral)"/>
+<rect x="33" y="6" width="1" height="1" fill="var(--hl)"/>
+<g class="p"><rect x="26" y="4" width="2" height="1" fill="var(--skin)"/><rect x="26" y="5" width="2" height="2" fill="var(--coral)"/></g>
+</svg>
+</header>
+ 
+<main class="wrap">
+<section id="proyek">
+<h2>Project</h2>
+<p class="hint">Klik filter untuk menyaring, atau klik kartu untuk melihat detail.</p>
+<div class="chips" id="cats"></div>
+<div class="grid" id="grid"></div>
+</section>
+ 
+<section id="keahlian">
+<h2>Skills</h2>
+<p class="hint">Klik keahlian untuk melihat project yang memakainya.</p>
+<div class="skills" id="skills"></div>
+</section>
+ 
+<section id="pendidikan">
+<h2>Pendidikan</h2>
+<div class="edu"><strong>Bina Nusantara University</strong>
+<p>Undergraduate Computer Science Student</p>
 </div>
-<div class="item">
-<strong>MR COFFEE</strong>
-<p class="mut">Human Computer Interaction Lab Project</p>
-<a href="https://github.com/WishlyVK/MR.COFFEE">Source</a>
-</div>
-<div class="item">
-<strong>RRQ Store Revision</strong>
-<p class="mut">Human Computer Interaction Lecture Project, where my group task to recreate an UI from a website we choose</p>
-<a href="https://gokonggg.github.io/HCILEC-REVISI/">Demo</a> · <a href="https://github.com/WishlyVK/RRQ-HCI-Report">Report</a>
-</div>
-
+</section>
 </main>
+ 
+<footer class="wrap">Terbuka untuk magang di bidang web, game, UX/UI, atau multimedia interaktif.</footer>
+ 
+<dialog id="dlg"><button class="x" id="close" aria-label="Tutup">×</button><div class="dlg" id="dbody"></div></dialog>
+ 
+<script>
+var C={"Web app":"var(--sky)","UX":"var(--matcha)","Game":"var(--violet)","Riset":"var(--coral)","HCI":"var(--hl)"};
+var P=[
+{t:"SpoJeDy",c:"Web app",s:"Web-based multimedia player for music and video, made with VueJS.",d:"Web-based multimedia player for music and video made with VueJS, deployed on Vercel.",g:["Vue.js","JavaScript","TailwindCSS","Git"],l:[["Demo","https://spo-jedy-coral.vercel.app/"],["Source","https://github.com/WishlyVK/SpoJedy"]]},
+{t:"Borneo Valley",c:"Game",s:"Game design project: designing the game system and how it works.",d:"A game design project where my group and I were tasked to design the game system and how it will work.",g:["Game design"],l:[["Documentation","https://canva.link/ekx3z00tae1touz"]]},
+{t:"AR BISINDO dengan Avatar 3D",c:"Riset",s:"AR mobile app that translates BISINDO sign language.",d:"An AR mobile app based on BISINDO sign language translation that my group and I made to translate sign language.",g:["Unity","Python"],l:[["Demo","https://drive.google.com/drive/folders/1O0Fijp8X-EB7D288koybHTzeKR0x2AMO"],["Resource","https://github.com/VallentTjhan/SignLingo"]]},
+{t:"Paper Riset BISINDO",c:"Riset",s:"Research paper comparing AI methods for real-time sign language translation.",d:"A Low-Latency Python-Unity Integrated Framework for Real-Time BISINDO Recognition: A Comparative Analysis of Coordinate-Based Deep Learning Architectures. My group and I wrote a research paper on which AI training method to implement in our real-time sign language translation app.",g:["Python","Unity"],l:[["Paper","https://github.com/WishlyVK/Paper-Research/blob/main/1571317584%20paper%20(1).pdf"]]},
+{t:"CHiMatcha",c:"UX",s:"Figma design implemented as a real mobile app.",d:"UX project where my group and I implemented a Figma design into a real mobile app with good UX fundamentals.",g:["UX","Figma"],l:[["Figma","https://lnkd.in/dAdUPReF"],["Source","https://github.com/WishlyVK/ChimatchaUX"]]},
+{t:"MR COFFEE",c:"HCI",s:"HCI lab project: a website built with HTML, CSS, and JavaScript.",d:"A Human Computer Interaction lab project where I was tasked to create a website with HTML, CSS, and JavaScript.",g:["JavaScript","HTML/CSS","UX"],l:[["Source","https://github.com/WishlyVK/MR.COFFEE"]]},
+{t:"RRQ Store Revision",c:"HCI",s:"Redesigning a website that lacked good HCI.",d:"A project where my group and I chose a website that did not implement good Human Computer Interaction, and recreated it with a better interface.",g:["UX"],l:[["Demo","https://gokonggg.github.io/HCILEC-REVISI/"],["Report","https://github.com/WishlyVK/RRQ-HCI-Report"]]}
+];
+var SK=[["Pemrograman",["Python","JavaScript","SQL"]],["Web",["Vue.js","TailwindCSS","Git"]],["Game dan multimedia",["Unity","Game design","UX"]]];
+var f="Semua",$=function(i){return document.getElementById(i)};
+function cats(){var a=["Semua"];P.forEach(function(p){if(a.indexOf(p.c)<0)a.push(p.c)});
+$("cats").innerHTML=a.map(function(x){return '<button class="chip" style="--c:'+(C[x]||"var(--hl)")+'" aria-pressed="'+(x===f)+'" data-f="'+x+'">'+x+'</button>'}).join("")}
+function grid(){var L=P.filter(function(p){return f==="Semua"||p.c===f||p.g.indexOf(f)>-1});
+$("grid").innerHTML=L.map(function(p,i){return '<button class="card" style="--c:'+C[p.c]+';animation-delay:'+i*40+'ms" data-i="'+P.indexOf(p)+'"><small>'+p.c+'</small><h3>'+p.t+'</h3><p>'+p.s+'</p><em>Lihat detail</em></button>'}).join("")||'<p class="empty">Belum ada proyek untuk filter ini.</p>'}
+function setF(x){f=x;cats();grid()}
+$("cats").onclick=function(e){var b=e.target.closest("[data-f]");if(b)setF(b.dataset.f)};
+var has=function(s){return P.some(function(p){return p.g.indexOf(s)>-1})};
+$("skills").innerHTML=SK.map(function(g){return '<div class="sk"><b>'+g[0]+'</b><div class="chips">'+g[1].map(function(s){return '<button class="chip" data-k="'+s+'"'+(has(s)?'':' disabled')+'>'+s+'</button>'}).join("")+'</div></div>'}).join("");
+$("skills").onclick=function(e){var b=e.target.closest("[data-k]");if(b&&!b.disabled){setF(b.dataset.k);$("proyek").scrollIntoView()}};
+$("grid").onclick=function(e){var b=e.target.closest("[data-i]");if(!b)return;var p=P[b.dataset.i];
+$("dlg").style.setProperty("--c",C[p.c]);
+$("dbody").innerHTML='<small>'+p.c+'</small><h3>'+p.t+'</h3><p>'+p.d+'</p><div class="tags">'+p.g.map(function(x){return '<span>'+x+'</span>'}).join("")+'</div><div class="btns">'+p.l.map(function(l,i){return '<a class="btn'+(i?'':' y')+'" href="'+l[1]+'" target="_blank" rel="noopener">'+l[0]+'</a>'}).join("")+'</div>';
+$("dlg").showModal()};
+$("close").onclick=function(){$("dlg").close()};
+$("dlg").onclick=function(e){if(e.target===$("dlg"))$("dlg").close()};
+cats();grid();
+$("copy").onclick=function(){var b=this;
+try{navigator.clipboard.writeText("wishly.kwek@binus.ac.id")}catch(x){}
+b.textContent="Tersalin";setTimeout(function(){b.textContent="Salin email"},1600)};
+$("theme").onclick=function(){var r=document.documentElement,d=r.dataset.theme?r.dataset.theme==="dark":matchMedia("(prefers-color-scheme:dark)").matches;r.dataset.theme=d?"light":"dark"};
+var R=["Computer Science student","Web Designer","Game designer","UI/UX designer"],ri=0,ci=0,del=false,el=$("typed"),rm=matchMedia("(prefers-reduced-motion:reduce)").matches;
+function type(){var w=R[ri];if(rm){el.textContent=R[0];return}
+ci+=del?-1:1;el.textContent=w.slice(0,ci);var t=del?35:70;
+if(!del&&ci===w.length){del=true;t=1600}else if(del&&ci===0){del=false;ri=(ri+1)%R.length;t=300}
+setTimeout(type,t)}
+type();
+var h=document.querySelector("header");
+if(!matchMedia("(hover:none)").matches)h.onmousemove=function(e){var r=h.getBoundingClientRect();h.style.setProperty("--mx",e.clientX-r.left+"px");h.style.setProperty("--my",e.clientY-r.top+"px")};
+var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){document.querySelectorAll("nav a").forEach(function(a){a.classList.toggle("on",a.dataset.s===en.target.id)})}})},{rootMargin:"-40% 0px -55% 0px"});
+["atas","proyek","keahlian","pendidikan"].forEach(function(i){io.observe($(i))});
+</script>
 </body>
 </html>
+ 
