@@ -171,9 +171,6 @@ $("dlg").showModal()};
 $("close").onclick=function(){$("dlg").close()};
 $("dlg").onclick=function(e){if(e.target===$("dlg"))$("dlg").close()};
 cats();grid();
-$("copy").onclick=function(){var b=this;
-try{navigator.clipboard.writeText("wishly.kwek@binus.ac.id")}catch(x){}
-b.textContent="Tersalin";setTimeout(function(){b.textContent="Salin email"},1600)};
 $("theme").onclick=function(){var r=document.documentElement,d=r.dataset.theme?r.dataset.theme==="dark":matchMedia("(prefers-color-scheme:dark)").matches;r.dataset.theme=d?"light":"dark"};
 var R=["Computer Science student","Web Designer","Game designer","UI/UX designer"],ri=0,ci=0,del=false,el=$("typed"),rm=matchMedia("(prefers-reduced-motion:reduce)").matches;
 function type(){var w=R[ri];if(rm){el.textContent=R[0];return}
